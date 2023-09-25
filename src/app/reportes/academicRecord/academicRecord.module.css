@@ -1,0 +1,102 @@
+.hu03MostrarRankingYHu05Child {
+    position: absolute;
+    top: 5.84em;
+    right: 0;
+    width: 73.75em;
+    height: 0.06em;
+  }
+  .rankingEstudiantil {
+    position: relative;
+    left: 1.2em;
+    margin-top: 2em;
+    font-size: 3em;
+    font-weight: 800;
+    display: inline-block;
+    width: 14.23em;
+    height: 0.98em;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .rankingEstudiantil2023Wrapper {
+    position: relative;
+    margin-top: 2.44em;
+    left: 1.25em;
+    border-radius: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 43.38em;
+    height: 3.94em;
+    text-align: left;
+    background: #000;
+    color: #000;
+  }
+  
+  
+
+  .hu03MostrarRankingYHu05Inner,
+  .todasParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .hu03MostrarRankingYHu05Inner {
+    position: absolute;
+    top: 12.25em;
+    left: 27.19em;
+    border-radius: 17px;
+    background-color: #4183aa;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 32.81em;
+    height: 2.13em;
+    padding: 0.13em 0.88em;
+    box-sizing: border-box;
+    text-align: right;
+    color: #fff;
+    font-family: Montserrat;
+  }
+
+  .frameDiv,
+  .todosParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .frameDiv {
+    position: absolute;
+    top: 12.25em;
+    left: 62.81em;
+    border-radius: 17px;
+    background-color: #4183aa;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    height: 2.13em;
+    padding: 0.13em 0.88em;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Montserrat;
+  }
+  .hu03MostrarRankingYHu051 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f8f8f8;
+    width: 83vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .hu03MostrarRankingYHu05 {
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+    height: 67.5em;
+    text-align: left;
+    color: #060606;
+    font-family: 'Inter';
+  }
+  
+  .conteinerTable{
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  
