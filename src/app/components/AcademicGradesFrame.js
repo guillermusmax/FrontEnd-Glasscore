@@ -1,5 +1,7 @@
+"use client"
+
 import styles from "./AcademicGradesFrame.module.css";
-import { DataGrid } from './useClient/MaterialUIClient';
+import { DataGrid } from '@mui/x-data-grid';
 import * as React from 'react';
 
 const AcademicGradesFrame = () => {

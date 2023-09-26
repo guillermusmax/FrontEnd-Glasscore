@@ -1,6 +1,7 @@
-import RankingPerson from "./RankingPerson";
+"use client"
+
 import styles from "./RankingFrame.module.css";
-import { DataGrid } from '../components/useClient/MaterialUIClient';
+import { DataGrid } from '@mui/x-data-grid';
 import * as React from 'react';
 
 const RankingFrame = () => {

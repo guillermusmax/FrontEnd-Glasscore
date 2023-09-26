@@ -1,6 +1,4 @@
-import Head from "next/head";
 import AcademicGradesFrame from "../../components/AcademicGradesFrame";
-import styles from "../../ranking/Ranking.module.css";
 import childrenStyle from "../../Children.module.css";
 
 export function AcademicGrades() {

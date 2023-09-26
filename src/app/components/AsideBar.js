@@ -1,8 +1,5 @@
 import Link from 'next/link'
 import styles from './AsideBar.module.css'
-//import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-// import 'react-pro-sidebar/dist/css/styles.css'
-import { useState} from './useClient/ReactClient'
 import { Box, IconButton, Typography, useTheme } from '@mui/material'
 // import { tokens } from './Theme'
 // import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -24,7 +21,7 @@ const links = [{
     route: '/'
   },{
     label: 'Asignaturas',
-    route: '/asignatura'
+    route: '/asignaturas'
   },{
     label: 'Ranking',
     route: '/ranking'
