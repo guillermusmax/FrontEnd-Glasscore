@@ -24,7 +24,7 @@ const Header = () => {
           height={18}
           className='object-contain'
         />
-        <button className="ml-3 text-2xl">EyeLeaf</button>
+        <button className="ml-3 text-2xl">GlassCore</button>
       </Link>
       </a>
       <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
