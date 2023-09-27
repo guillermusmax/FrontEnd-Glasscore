@@ -34,6 +34,9 @@ const links = [{
   },{
     label: 'Historial Academico',
     route: '/reportes/academicRecord'
+  },{
+    label: 'Calificacion Final',
+    route: '/reportes/finalGrades'
   }]
 
 

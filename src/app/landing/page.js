@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePosicionScroll } from '../../hooks/usePositionScroll'
+import { usePosicionScroll } from '../hooks/usePositionScroll'
 
 
 const Header = () => {
@@ -257,7 +257,7 @@ const Footer = () => {
 }
 
 
-export default function finalGrades() {
+export default function landing() {
   return(
       <div>
           <Header />
