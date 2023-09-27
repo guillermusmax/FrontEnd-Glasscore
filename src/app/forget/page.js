@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '@/Components/Header'
-import Forma from '@/Components/forma'
+import Forge from '@/Components/Forge'
 
 function page() {
   return (
     <main>
         <Header/>
-        <Forma/>
+        <Forge/>
     </main>
   )
 }
