@@ -6,7 +6,6 @@ import Header from '@/Components/Header'
 export default function Page(){
   return (
     <main>
-      <Header/>
       <Login/>
     </main>
   )
