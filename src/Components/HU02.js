@@ -7,7 +7,7 @@ import Image from 'next/image'
 const HU02 = () => (
   <section class="text-gray-600 body-font relative">
     <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
-      <div class="lg:w-2/3 bg-sky-900 rounded-lg overflow-hidden sm:mr-16 mx-10 my-7 p-10 flex items-end justify-start relative">
+      <div class="lg:w-2/3 bg-sky-900 rounded-lg overflow-hidden sm:mr-16 mx-10 my-7 p-10 flex items-end justify-start relative">n
         <Image title="back"
           width={2000}
           height={2000}

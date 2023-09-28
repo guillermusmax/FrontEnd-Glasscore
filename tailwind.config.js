@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        '36': '36px',
+      },
+      colors: {
+        'customBlue': '#0B3954',
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
