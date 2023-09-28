@@ -15,7 +15,7 @@ const Footer = () => {
         />
         <span className="ml-3 text-xl">GlassCore</span>
       </a>
-      <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 EyeLeaf
+      <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 GlassCore
         <a href="https://www.instagram.com/just.jcob/" className="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@just.Jcob</a>
       </p>
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
