@@ -32,4 +32,4 @@ const HU02 = () => (
   </section>
 )
 
-export default Login
+export default HU02
