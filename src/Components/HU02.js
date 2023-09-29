@@ -16,16 +16,16 @@ const HU02 = () => (
         </Image>
       </div>
       <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full] md: py-36 px-3 mx-10 md:mt-0">
-        <h2 class="text-customBlue text-lg font-inter font-black mb-5">Cambiar Contraseña</h2>
+        <h2 class="text-customBlue text-lg font-inter font-black mb-5"style={{ fontSize: '36px', whiteSpace: 'nowrap' }}>Cambiar contraseña</h2>
         <div class="relative mb-4">
-          <label for="paswword" class="leading-7 text-sm text-customBlue">Contraseña nueva</label>
-          <input type="password" id="password" user="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />          </div>
+          <label for="paswword" class="leading-7 font-inter text-sm text-customBlue font-black">Contraseña nueva</label>
+          <input type="password" id="password" user="password" style={{ borderRadius: '16px', border: '1px solid #666' }} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />          </div>
         <div class="relative mb-4">
-          <label for="password" class="leading-7 text-sm text-customBlue">Confirmar contraseña</label>
-          <input type="password" id="password" user="password" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+          <label for="password" class="leading-7 font-inter text-sm text-customBlue font-black">Confirmar contraseña</label>
+          <input type="password" id="password" user="password" style={{ borderRadius: '16px', border: '1px solid #666' }} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
         </div>
         <Link href="/Inicio">
-          <button class="text-white bg-sky-900 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Confirmar</button>
+          <button class="text-white bg-sky-900 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg font-montserrat text-18px"style={{ borderRadius: '36px' }}>Confirmar</button>
         </Link>
       </div>
     </div>
