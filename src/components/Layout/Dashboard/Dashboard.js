@@ -85,9 +85,9 @@ const Schedule = () => {
 
 function BasicCard(props) {
   return (
-    <Card sx={{ minWidth: 350, minHeight: 230, paddingTop: 2.5, backgroundColor: `rgba(${props.color}, 0.3)`, boxShadow: '-8px 8px 12px rgba(0, 0, 0, 0.5)'}}>
+    <Card sx={{ minWidth: 350, minHeight: 230, paddingTop: 2.5, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)'}}>
       <CardContent>
-      <BarChartIcon sx={{ fontSize: 50 }}/>
+      <BarChartIcon sx={{ fontSize: 50 , backgroundColor: `rgba(${props.color}, 0.3)`, borderRadius: '50%'}}/>
         <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
           {props.title}
         </Typography>
@@ -105,6 +105,7 @@ export default function Dashboard() {
     return(
       <div>
         <div className={styles.board}>
+          
           <div className={styles.card}>
             <BasicCard 
               color= '240, 0, 0'

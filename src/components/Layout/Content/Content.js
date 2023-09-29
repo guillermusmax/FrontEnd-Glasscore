@@ -34,8 +34,8 @@ export function ContentAdmin({ menuVisible, selectedOption }) {
       case 'reportes':
         content = <Reportes />;
       break;
-      case 'inicio':
-        content = <Reportes />;
+      case 'inicioestudiante':
+        content = <InicioEstudiante />;
       break 
       case 'seleccion':
         content = <Seleccion />;

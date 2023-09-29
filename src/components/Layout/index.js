@@ -26,7 +26,6 @@ export * from './CalificacionMedioTermino';
 export * from './AcademicGradesFrame';
 export * from './Dashboard';
 export * from './HistorialAcademico';
-export * from './InicioEstudiante';
 export * from './Pensum';
 export * from './PensumFrame';
 export * from './RankingFrame';
