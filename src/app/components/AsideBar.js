@@ -18,7 +18,7 @@ import { Box, IconButton, Typography, useTheme } from '@mui/material'
 
 const links = [{
     label: 'Inicio',
-    route: '/'
+    route: '/inicio'
   },{
     label: 'Asignaturas',
     route: '/asignaturas'

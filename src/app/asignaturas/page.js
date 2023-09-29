@@ -134,7 +134,7 @@ export default Asignaturas;*/
 
 
 
-"use client"
+/*"use client"
 import axios from 'axios';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
@@ -191,4 +191,82 @@ const Asignaturas = () => {
   );
 };
 
-export default Asignaturas;
+export default Asignaturas;*/
+
+
+
+
+
+
+
+"use client"
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function MyFormPage() {
+
+  const userData = {
+    User_Name: 0,
+    Password: ""
+  };
+
+  const [inputUser, setInputUser] = useState(userData)
+
+  const handleUser = (e) =>{
+    setInputUser({...inputUser, [e.target.name]:e.target.value})
+  }
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    await axios.post("https://localhost:44377/api/Login", inputUser).then((response)=>{
+      console.log(response);
+    })
+    .catch((error) => {
+      // Maneja el error aquí
+      console.error('Error:', error);
+    });
+  };
+
+
+  // Creamos estados para almacenar los valores de los campos del formulario
+  /*const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  // Función para manejar el envío del formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aquí puedes realizar cualquier lógica que necesites con los datos del formulario
+    console.log('Nombre:', name);
+    console.log('Email:', email);
+    console.log('Contraseña:', password);
+  };*/
+
+  return (
+    <section>
+    <div style={{background:'black'}}>
+      
+      <div>
+        <h2>Log in</h2>
+        <div>
+          <label for="full-user" >User</label>
+          <input type="number" 
+          value={12}  
+          onChange={handleUser} name = "UserName" id="full-user" user="full-user" />         
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password"   
+          value={'password123&'}
+          
+          onChange={handleUser} name = "Password" id="password" user="password" />
+        </div>
+        
+          <button onClick={handleSubmit}>Log in</button>
+        
+      </div>
+    </div>
+  </section>
+  );
+}
+
+export default MyFormPage;

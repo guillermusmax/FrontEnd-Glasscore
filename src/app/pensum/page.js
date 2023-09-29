@@ -11,6 +11,8 @@ export function AcademicGrades() {
           </div>
         </div>
         <PensumFrame />
+        <PensumFrame />
+        <PensumFrame />
       </div>
     </a>
   );

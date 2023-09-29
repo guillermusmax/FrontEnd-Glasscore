@@ -7,6 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import styles from './PensumFrame.module.css'
+
 
 /*const PensumFrame = () => {
   
@@ -65,13 +67,16 @@ function createData(code, subject, credits) {
   
   export default function PensumFrame() {
     return (
-          <TableContainer component={Paper}>
+      <div>
+        
+          <TableContainer className={styles.hu03MostrarRankingYHu05Inner}>
+          <h1><b>Trimestre 1</b></h1>
             <Table sx={{ Width: '100%'}} aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell><b>Clave</b></TableCell>
-                  <TableCell align="right"><b>Asignatura</b></TableCell>
-                  <TableCell align="right"><b>Créditos</b></TableCell>
+                  <TableCell align="left"><b>Asignatura</b></TableCell>
+                  <TableCell align="center"><b>Créditos</b></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -83,12 +88,13 @@ function createData(code, subject, credits) {
                     <TableCell component="th" scope="row">
                       {row.code}
                     </TableCell>
-                    <TableCell align="right">{row.subject}</TableCell>
-                    <TableCell align="right">{row.credits}</TableCell>
+                    <TableCell align="left">{row.subject}</TableCell>
+                    <TableCell align="center">{row.credits}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
+          </div>
     );
   }

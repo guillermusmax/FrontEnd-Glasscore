@@ -1,3 +1,29 @@
+.board{
+    position: relative;
+  margin-top: 2em;
+  left: 1.5em;
+  width: 80vw;
+  padding: 1.13em 1.13em 0.63em;
+  box-sizing: border-box;
+  text-align: left;
+  color: #060606;
+  font-family: 'Abel';
+  font-size:x-large;
+}
+
+.card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /*gap: 1em*/
+}
+
+
+.scheduleFrame{
+  margin-top: 2em;
+    
+}
+
 
 .hu03MostrarRankingYHu05Inner {
   display: flex;
@@ -14,7 +40,6 @@
   background-color: #fff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 80vw;
-  height: 65vh;
   padding: 1.13em 1.13em 0.63em;
   box-sizing: border-box;
   text-align: left;
@@ -23,13 +48,8 @@
   font-size:x-large;
 }
 
-
-.fontRanking {
+.fontDashboard {
   font-size:x-large;
   height: 650;
   width: '100%';
-}
-
-.indexAcademicGrades {
-  justify-items: right;
 }

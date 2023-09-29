@@ -8,7 +8,7 @@ const AcademicGradesFrame = () => {
   
   //DataGrid's columns
   const columns = [
-    { field: 'code', headerName: 'Clave', width: 170},
+    { field: 'code', headerName: 'Clave', width: 170 },
     { field: 'section', headerName: 'Sección', width: 160 },
     { field: 'subject', headerName: 'Asignatura', width: 900 },
     { field: 'grade', headerName: 'Calificación', width: 200 },
@@ -53,14 +53,6 @@ const AcademicGradesFrame = () => {
       { id: 9, code: 'IBM321', section: 2, subject: 'Tendencias en la ingenieria de Software', grade: 'A', credits: 2, points: 8},
       { id: 10, code: 'CBM123', section: 2, subject: 'Aseguramiento de la calidad de Software', grade: 'A', credits: 4, points: 16},
       { id: 11, code: 'GC123', section: 1, subject: 'Base de datos', grade: 'B', credits: 5, points: 15},
-      { id: 12, code: 'IBM321', section: 2, subject: 'Tendencias en la ingenieria de Software', grade: 'A', credits: 2},
-      { id: 13, code: 'CBM123', section: 2, subject: 'Aseguramiento de la calidad de Software', grade: 'A', credits: 4, points: 16},
-      { id: 14, code: 'GC123', section: 1, subject: 'Base de datos', grade: 'B', credits: 5, points: 15},
-      { id: 15, code: 'IBM321', section: 2, subject: 'Tendencias en la ingenieria de Software', grade: 'A', credits: 2, points: 8},
-      { id: 16, code: 'GC123', section: 1, subject: 'Base de datos', grade: 'B', credits: 5, points: 15},
-      { id: 17, code: 'IBM321', section: 2, subject: 'Tendencias en la ingenieria de Software', grade: 'A', credits: 2, points: 8},
-      { id: 18, code: 'GC123', section: 1, subject: 'Base de datos', grade: 'B', credits: 5, points: 15},
-      { id: 19, code: 'IBM321', section: 2, subject: 'Tendencias en la ingenieria de Software', grade: 'A', credits: 2, points: 8},
     ];
 
     //DataGrid creation
