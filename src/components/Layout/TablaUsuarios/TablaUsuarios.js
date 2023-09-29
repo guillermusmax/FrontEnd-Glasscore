@@ -1,6 +1,7 @@
 import { Table, Button, Icon , Pagination} from "semantic-ui-react";
 import styles from './TablaUsuarios.module.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 let data = [
     { Name: 'Juan Pérez', ID: '12345', TIUser: 'Profesor',  Email: 'juan@example.com', type: "Estudiante", Registerdate: '2023-01-15' },
@@ -22,7 +23,21 @@ let data = [
 
   
 export function TablaUsuarios() {
-    
+  
+  const [UserList, setUserList] =  useState([])
+  useEffect(() => {
+    getUserList();
+  }, []);
+
+  const getUserList = () => {
+    axios.get("https://localhost:44377/api/Usuarios").then((response) => {
+  
+    setUserList(response.data);
+    }).catch((error) => {
+      console.error('Error al obtener la lista de usuarios:', error);
+    });
+  }
+
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [selectedItemId, setSelectedItemId] = useState(null);
 
@@ -75,14 +90,14 @@ export function TablaUsuarios() {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {data.map((item, index) => (
+          {UserList.map((item, index) => ( 
             <Table.Row key={index}>
               <Table.Cell style={{ width: '150px' }} className={styles.centeredCell}>{/*item.Photo*/}<Icon name="id card" /></Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Name}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.ID}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.TIUser}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Nombre_Usuario}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.UserName}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Rol}</Table.Cell>
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Email}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Registerdate}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Fecha_Ingreso}</Table.Cell>
               <Table.Cell style={{ width: '100px' }} className={styles.centeredCell}>
               <Button icon color="" onClick={() => handleEdit(item.id)} className={styles.iconButton}>
                   <Icon name="pencil alternate" />

@@ -6,7 +6,7 @@ import { Dropdown, Button, Search} from "semantic-ui-react";
 import styles from './FiltrarUsuarios.module.scss';
 
 export  function FiltrarUsuarios() {
-  const Filtros = [
+  const Filtros = [ 
     { key: '1', value: '1', text:'Profesor'},
     { key: '2', value: '2', text:'Estudiantes'},
     { key: '3', value: '3', text:'Administrador'},

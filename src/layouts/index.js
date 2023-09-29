@@ -3,3 +3,4 @@ export * from './BasicLayout';
 export * from './AdminUsuariosLayout';
 export * from './EstudianteUsuarioLayout';
 export * from './HomeLayout';
+export *from './HomeLayout';
