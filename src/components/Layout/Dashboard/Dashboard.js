@@ -22,13 +22,13 @@ function createData(section, subject, credits, classroom, monday, tuesday, wedne
 }
   
 const rows = [
-  createData('CBM101-01', 'Matematicas Discreta', '5', 'AB202', '16/18', null, '16/18', null, null, null),
+  createData('CBM101-01', 'Matematicas Discreta', '5', 'AB202', '16/18', null, '16/18', null, null, '14/16'),
   createData('CBM101-01', 'Aseguramiento de la calidad de software', '4', 'AB202', '14/16', null, '14/16', null, '14/16', null),
   createData('CBM101-01', 'Tendencia en la ingenieria de software', '4', 'AB202', null, null, null, null, null, '10/12'),
   createData('CBM101-01', 'Analisis de datos en la ingenieria', '4', 'AB202', null, null, null, null, null, '9/10'),
   createData('CBM101-01', 'Ingenieria economica', '4', 'AB202', null, null, null, null, null, '8/9'),
   createData('CBM101-01', 'Diseño de software', '4', 'AB202', null, null, null, null, null, '12/14'),
-  createData('CBM101-01', 'Practica profesional en la ingenieria de software', '4', 'AB202', '12/14', '12/14', '12/14', '12/14', '12/14', null),
+  createData('CBM101-01', 'Practica profesional en la ingenieria de software', '4', 'AB202', '12/14', '12/14', '12/14', '12/14', '12/14', '14/16'),
   createData('CBM101-01', 'Modelos y metodos de la ingenieria de software', '3', 'AB202', '10/12', null, '10/12', null, '10/12', null),
   createData('CBM101-01', 'Arquitectura del computador', '4', 'AB202', null, '10/12', null, '10/12', null, null),
   createData('CBM101-01', 'Gestion de proyectos', '4', 'AB202', null, '18/20', '18/20', null, null, null),
@@ -50,6 +50,8 @@ const Schedule = () => {
                 <TableCell className={styles.fontDashboard} align="center"><b>Mi</b></TableCell>
                 <TableCell className={styles.fontDashboard} align="center"><b>Ju</b></TableCell>
                 <TableCell className={styles.fontDashboard} align="center"><b>Vi</b></TableCell>
+                <TableCell className={styles.fontDashboard} align="center"><b>Sa</b></TableCell>
+
 
 
               </TableRow>
@@ -64,6 +66,7 @@ const Schedule = () => {
                     {row.section}
                   </TableCell>
                   <TableCell className={styles.fontDashboard} align="left">{row.subject}</TableCell>
+                  <TableCell className={styles.fontDashboard} align="center">{row.credits}</TableCell>
                   <TableCell className={styles.fontDashboard} align="center">{row.classroom}</TableCell>
                   <TableCell className={styles.fontDashboard} align="center">{row.monday}</TableCell>
                   <TableCell className={styles.fontDashboard} align="center">{row.tuesday}</TableCell>
