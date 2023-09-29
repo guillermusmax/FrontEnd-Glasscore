@@ -33,6 +33,12 @@ export function MenuBar({ menuVisible, setMenuVisible, onSelectOption  }) {
           <div className={styles.typeUser}>
             Administrador
           </div>
+          <div className={styles.menuItem} onClick={() => handleOptionClick('inicio')}>
+            <div className={styles.itemWrapper}>
+              <Icon name="trophy" size="large" className={menuVisible ? styles.iconVisible : styles.iconHidden} />
+              <span>Inicio</span>
+            </div>
+          </div>
           <div className={styles.menuItem} onClick={() => handleOptionClick('usuarios')}>
           <div className={styles.itemWrapper}>
             <Icon name="users" size="large" className={menuVisible ? styles.iconVisible : styles.iconHidden} />
@@ -77,6 +83,10 @@ export function MenuBar({ menuVisible, setMenuVisible, onSelectOption  }) {
           <>
           <div className={styles.photoUserConteiner}>
             <Image src='/PhotoUser.PNG' alt='User_Photo'/>
+          </div>
+          <div className={styles.menuItemConteiner} onClick={() => handleOptionClick('inicio')}>
+            <Icon name="book" />
+            
           </div>
           <div className={styles.menuItemConteiner} onClick={() => handleOptionClick('usuarios')}>
             <Icon name="users" />

@@ -1,0 +1,35 @@
+.topBarStyle{
+    background: white;
+    border-color: black;
+    border-bottom: 2px solid #000;
+    
+}
+
+
+.headerStyle{
+    width: 83%;
+    min-height: 120px;
+    background-color: blue;
+    border-bottom: 4px;
+    border-color: rgb(255, 255, 255);
+    
+    float: right;
+
+}
+
+.logo{
+    display: flex;
+    flex: column;
+}
+
+.titleLogo {
+    color: black;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.logoImg {
+}

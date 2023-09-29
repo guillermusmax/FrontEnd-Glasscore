@@ -1,0 +1,34 @@
+.hu03MostrarRankingYHu05Inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .hu03MostrarRankingYHu05Inner {
+    position: relative;
+    margin-top: 2em;
+    left: 1.5em;
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 80vw;
+    height: 65vh;
+    padding: 1.13em 1.13em 0.63em;
+    box-sizing: border-box;
+    text-align: left;
+    color: #060606;
+    font-family: 'Abel';
+    font-size:x-large;
+  }
+  
+  
+  .fontRanking {
+    font-size:x-large;
+    height: 650;
+    width: '100%';
+  }
+  
+  .indexAcademicGrades {
+    justify-items: right;
+  }

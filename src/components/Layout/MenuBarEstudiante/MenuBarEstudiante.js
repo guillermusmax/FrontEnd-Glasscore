@@ -110,6 +110,10 @@ export function MenuBarEstudiante({ menuVisible, setMenuVisible, onSelectOption 
           <div className={styles.photoUserConteiner}>
             <Image src='/PhotoUser.PNG' alt='User_Photo'/>
           </div>
+          <div className={styles.menuItemConteiner} onClick={() => handleOptionClick('inicio')}>
+            <Icon name="book" />
+            
+          </div>
           <div className={styles.menuItemConteiner} onClick={() => handleOptionClick('usuarios')}>
             <Icon name="users" />
             

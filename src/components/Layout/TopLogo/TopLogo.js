@@ -9,8 +9,8 @@ export function TopLogo() {
       <div className={styles.presentationBar}>
       <div className={styles.content}>
         <div className={styles.titleAndLogo}>
-          
           <Link href='/' className='flex justify-center items-center'>
+            <button className="ml-3 text-2xl">GlassCore</button>
             <Image
               src='/imagenes/Lupa.png'
               alt='logo'
@@ -18,7 +18,6 @@ export function TopLogo() {
               height={18}
               className='object-contain'
             />
-            <button className="ml-3 text-2xl">GlassCore</button>
           </Link>
         </div>
       </div>
