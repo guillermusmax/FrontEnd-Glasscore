@@ -66,7 +66,7 @@ export function BuscarAsignacion() {
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Materia}</Table.Cell>
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Créditos}</Table.Cell>
               <Table.Cell style={{ width: '100px' }} className={styles.centeredCell}>
-              <Button icon color="" onClick={item} className={styles.iconButton}>
+              <Button icon color="" onClick={handleOpenModal} className={styles.iconButton}>
                   <Icon name="add" />
                 </Button>
               </Table.Cell>
