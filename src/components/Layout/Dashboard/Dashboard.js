@@ -105,7 +105,6 @@ function BasicCard(props) {
 export default function Dashboard() {
     return(
       <div>
-        
         <div className={styles.board}>
           <div className={styles.info}>
             <div>
