@@ -1,28 +1,16 @@
 import { Table, Button, Icon , Pagination} from "semantic-ui-react";
-import styles from './SeleccionEstudiante.module.scss';
+import styles from './BuscarAsignacion.module.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 let data = [
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01',  Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
+    { Código: 'CBM-110', Materia: 'Jugo e china', Créditos: "4"},
+    
     // ... otros datos ...
   ];
 
 
-export function SeleccionEstudiante() {
+export function BuscarAsignacion() {
 
   const [Asignaturas, setAsignaturas] =  useState([])
   useEffect(() => {
@@ -82,11 +70,8 @@ export function SeleccionEstudiante() {
           <Table.Row>
             <Table.HeaderCell className={styles.headerCell}>Código</Table.HeaderCell>
             <Table.HeaderCell className={styles.headerCell}>Materia</Table.HeaderCell>
-            <Table.HeaderCell className={styles.headerCell}>Sección</Table.HeaderCell>
-            <Table.HeaderCell>Profesores</Table.HeaderCell>
             <Table.HeaderCell>Créditos</Table.HeaderCell>
-            <Table.HeaderCell>Horario</Table.HeaderCell>
-            <Table.HeaderCell>Seleccionar</Table.HeaderCell>
+            <Table.HeaderCell>Añadir</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -94,10 +79,7 @@ export function SeleccionEstudiante() {
             <Table.Row key={index}>
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Código}</Table.Cell>
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Materia}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Sección}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Profesores}</Table.Cell>
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Créditos}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Horario}</Table.Cell>
               <Table.Cell style={{ width: '100px' }} className={styles.centeredCell}>
               <Button icon color="" onClick={() => handleEdit(item.id)} className={styles.iconButton}>
                   <Icon name="pencil alternate" />

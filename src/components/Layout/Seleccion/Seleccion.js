@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { SeleccionEstudiante } from '@/components/Layout/SeleccionEstudiante/SeleccionEstudiante';
+import { BuscarAsignacion } from '@/components/Layout/BuscarAsignacion/BuscarAsignacion';
 import { Dropdown, Button, Search} from "semantic-ui-react";
 import styles from './Seleccion.module.scss';
+
 
 export function Seleccion(){
     return(
@@ -19,6 +21,9 @@ export function Seleccion(){
                     <div className={styles.searchContainer}>
             <Search className={styles.searchInput} />
           </div>
+          <div className={styles.tableContainer}>
+                <BuscarAsignacion />
+            </div>
         </>
     );
 }
