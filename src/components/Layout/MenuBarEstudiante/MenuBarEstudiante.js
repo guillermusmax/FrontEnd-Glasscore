@@ -39,7 +39,7 @@ export function MenuBarEstudiante({ menuVisible, setMenuVisible, onSelectOption 
             <span>Inicio</span>
           </div>
           </div>
-          <div className={styles.menuItem}>
+          <div className={styles.menuItem} onClick={() => handleOptionClick('seleccion')}>
           <div className={styles.itemWrapper}>
             <Icon name="book" size="large" className={menuVisible ? styles.iconVisible : styles.iconHidden} />
             <span>Asignaturas</span>
@@ -86,7 +86,7 @@ export function MenuBarEstudiante({ menuVisible, setMenuVisible, onSelectOption 
         <div className={styles.menuItem} onClick={() => handleOptionClick('historialacademico')}>
           <div className={styles.itemWrapper}>
             <Icon name="chart bar" size="large" className={menuVisible ? styles.iconVisible : styles.iconHidden} />
-            <span>Histroial academico</span>
+            <span>Historial academico</span>
           </div>
         </div>
         <div className={styles.menuItem} onClick={() => handleOptionClick('pensum')}>

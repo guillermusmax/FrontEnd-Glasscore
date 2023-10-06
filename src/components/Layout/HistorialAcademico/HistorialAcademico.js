@@ -1,7 +1,7 @@
 import AcademicGradesFrame from "../AcademicGradesFrame/AcademicGradesFrame";
 import childrenStyle from "../Children.module.css";
 
-export function AcademicGrades() {
+export function HistorialAcademico() {
   return (
     <a className={childrenStyle.hu03MostrarRankingYHu05}>
       <div className={childrenStyle.hu03MostrarRankingYHu051}>
@@ -20,4 +20,4 @@ export function AcademicGrades() {
   );
 };
 
-export default AcademicGrades;
+export default HistorialAcademico;

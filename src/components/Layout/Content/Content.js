@@ -14,6 +14,7 @@ import { Retiros } from '../Retiros';
 import { HistorialAcademico } from '../HistorialAcademico';
 import { Pensum } from '../Pensum';
 
+
 export function ContentAdmin({ menuVisible, selectedOption }) {
     
     const contentClass = menuVisible ? styles.contentExpanded : styles.contentCollapsed;
@@ -35,7 +36,7 @@ export function ContentAdmin({ menuVisible, selectedOption }) {
         content = <Reportes />;
       break;
       case 'inicio':
-        content = <Reportes />;
+        content = <InicioEstudiante />;
       break 
       case 'seleccion':
         content = <Seleccion />;

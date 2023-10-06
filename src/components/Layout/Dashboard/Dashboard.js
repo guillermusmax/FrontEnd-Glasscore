@@ -14,6 +14,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import MovingIcon from '@mui/icons-material/Moving';
+import { Icon, Image} from 'semantic-ui-react'; 
 import styles from './Dashboard.module.css'
 
 
@@ -38,7 +39,7 @@ const Schedule = () => {
   return (
     <div>
         <TableContainer className={styles.hu03MostrarRankingYHu05Inner}>
-          <Table sx={{ Width: '100%'}} aria-label="simple table" >
+          <Table sx={{ Width: '100%' }} aria-label="simple table" >
             <TableHead>
               <TableRow>
                 <TableCell className={styles.fontDashboard}><b>Seccion</b></TableCell>
@@ -85,7 +86,7 @@ const Schedule = () => {
 
 function BasicCard(props) {
   return (
-    <Card sx={{ minWidth: 350, minHeight: 230, paddingTop: 2.5, backgroundColor: `rgba(${props.color}, 0.3)`, boxShadow: '-8px 8px 12px rgba(0, 0, 0, 0.5)'}}>
+    <Card sx={{ minWidth: 350, minHeight: 230, paddingTop: 2.5, marginBottom: 2.5, marginRight: 2.5,backgroundColor: `rgba(${props.color}, 0.3)`, boxShadow: '-8px 8px 12px rgba(0, 0, 0, 0.5)'}}>
       <CardContent>
       <BarChartIcon sx={{ fontSize: 50 }}/>
         <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
@@ -104,7 +105,29 @@ function BasicCard(props) {
 export default function Dashboard() {
     return(
       <div>
+        
         <div className={styles.board}>
+          <div className={styles.info}>
+            <div>
+            <h1 style={{marginTop: '2em'}}><strong>ID:</strong> </h1>
+            <p>1104816</p>
+            <h1 style={{marginTop: '2em'}}><strong>Programa de asignatura:</strong> </h1>
+            <p>Ingenieria de software</p>
+
+            <h1 style={{marginTop: '2em'}}><strong>Honor actual:</strong> </h1>
+            <p>Sumacumlaude</p>
+          </div>
+
+          <div>
+            <h1 style={{marginTop: '2em'}}><strong>Indice Trimestral:</strong> </h1>
+            <p>3.95</p>
+            <h1 style={{marginTop: '2em'}}><strong>Indice general:</strong> </h1>
+            <p>3.90</p>
+            <h1 style={{marginTop: '2em'}}><strong>Trimestres cursados:</strong> </h1>
+            <p>8</p>
+          </div>
+            
+          </div>
           <div className={styles.card}>
             <BasicCard 
               color= '240, 0, 0'
@@ -126,11 +149,11 @@ export default function Dashboard() {
               title= 'Indice general'
               value= '3.7/4'
             />
-            <BasicCard 
+            {/*<BasicCard 
               color= '240, 240, 0'
               title= 'Indice trimestral'
               value= '3.9/4'
-            />
+            />*/}
 
           </div>
         </div>

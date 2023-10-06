@@ -71,10 +71,6 @@
     align-items: center;
     justify-content: flex-start;
   }
-  .todasParent {
-    width: 31.19em;
-    gap: 0.63em;
-  }
   .hu03MostrarRankingYHu05Inner {
     position: absolute;
     top: 12.25em;
@@ -128,6 +124,7 @@
     padding-bottom: 10em;
     overflow: hidden;
   }
+  
   .hu03MostrarRankingYHu05 {
     text-decoration: none;
     position: relative;

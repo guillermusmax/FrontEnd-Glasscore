@@ -1,29 +1,38 @@
-Dashboard.module.css
-
-
 .board{
-    position: relative;
+  position: relative;
   margin-top: 2em;
   left: 1.5em;
   width: 80vw;
   padding: 1.13em 1.13em 0.63em;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: left;
   color: #060606;
   font-family: 'Abel';
   font-size:x-large;
 }
 
+.info {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: aliceblue;
+}
+
 .card{
+  width: 40%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+
   /*gap: 1em*/
 }
 
-
 .scheduleFrame{
   margin-top: 2em;
+  
     
 }
 
@@ -52,7 +61,6 @@ Dashboard.module.css
 }
 
 .fontDashboard {
-  font-size:x-large;
-  height: 650;
-  width: '100%';
+  font-size: 50px; /* Cambia el tamaño de fuente según tus preferencias */
+  font-weight: bold;
 }
