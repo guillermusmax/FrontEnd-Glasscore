@@ -1,4 +1,4 @@
-import { Table, Button, Icon , Pagination} from "semantic-ui-react";
+import { Modal, Form, Button, Checkbox, Segment, Table, Icon, Pagination} from "semantic-ui-react";
 import styles from './BuscarAsignacion.module.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -82,10 +82,7 @@ export function BuscarAsignacion() {
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Créditos}</Table.Cell>
               <Table.Cell style={{ width: '100px' }} className={styles.centeredCell}>
               <Button icon color="" onClick={() => handleEdit(item.id)} className={styles.iconButton}>
-                  <Icon name="pencil alternate" />
-                </Button>
-                <Button icon color="" onClick={() => handleDelete(item.id)} className={styles.iconButton}>
-                  <Icon name="trash alternate" />
+                  <Icon name="add" />
                 </Button>
               </Table.Cell>
         </Table.Row>
