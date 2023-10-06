@@ -14,11 +14,22 @@ export function FiltrarAsignaturas({ clave }) {
     setModalOpen(false);
   };
 
+  // Supongamos que tienes un array de asignaturas
+  const asignaturas = [
+    { clave: '123', nombre: 'Matemáticas' },
+    { clave: '456', nombre: 'Historia' },
+    { clave: '456', nombre: 'Historia' },
+    { clave: '456', nombre: 'Historia' },
+    { clave: '456', nombre: 'Historia' },
 
-    return (
-      <div>
+
+    // Agrega más asignaturas aquí
+  ];
+
+  return (
+    <div>
       <h2>Gestionar Asignaturas</h2>
-      <Table >
+      <Table>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Clave</Table.HeaderCell>
@@ -28,22 +39,20 @@ export function FiltrarAsignaturas({ clave }) {
         </Table.Header>
 
         <Table.Body>
-          {/* Aquí puedes mapear tus asignaturas y crear filas para cada una */}
-          <Table.Row>
-            <Table.Cell>123</Table.Cell>
-            <Table.Cell>Matemáticas</Table.Cell>
-            <Table.Cell>
-            <div className="icon-container" onClick={handleOpenModal} >
-              <Icon name="pencil" className={styles.editIcon} /> Editar
-              <MateriaHorario clave={clave} isOpen={modalOpen} onClose={handleCloseModal}/>
-            </div>
-            </Table.Cell>
-          </Table.Row>
-          {/* Agrega más filas según sea necesario */}
+          {asignaturas.map((asignatura) => (
+            <Table.Row key={asignatura.clave}>
+              <Table.Cell>{asignatura.clave}</Table.Cell>
+              <Table.Cell>{asignatura.nombre}</Table.Cell>
+              <Table.Cell>
+                <div className="icon-container" onClick={handleOpenModal}>
+                  <Icon name="pencil" className={styles.editIcon} /> Editar
+                  <MateriaHorario clave={clave} isOpen={modalOpen} onClose={handleCloseModal}/>
+                </div>
+              </Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table>
-      
     </div>
-    )
-  }
-  
+  );
+}
