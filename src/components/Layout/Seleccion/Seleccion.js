@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import styles from './Seleccion.module.scss';
+
 export function Seleccion(){
     return(
         <div>
          <h1 className={styles.pagetitle}>Selección</h1>
+         <Link href="/Estudiante/estudiantehome">
+              <button class="text-white bg-[#0B3954] border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded-[32px] shadow-md text-lg">Confirmar</button>
+            </Link>
          <div className="absolute top-[300px] left-[709px] bg-gainsboro w-0.5 h-0.5" />
         <div className="absolute top-[855px] left-[1053px] shadow-[0px_4px_20px_#e8ecff] w-[352px] h-12 text-abupeteng">
           <div className="absolute top-[0px] left-[0px] rounded-2xl bg-putih w-[352px] h-12" />
