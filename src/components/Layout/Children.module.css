@@ -48,17 +48,6 @@
     left: 63.38em;
   }
   .icons,
-  .todas {
-    position: relative;
-    flex-shrink: 0;
-  }
-  .todas {
-    font-size: 0.88em;
-    letter-spacing: 0.01em;
-    display: flex;
-    align-items: center;
-    width: 33.5em;
-  }
   .icons {
     width: 0.88em;
     height: 0.88em;
@@ -86,21 +75,7 @@
     color: #fff;
     font-family: Montserrat;
   }
-  .todos {
-    position: relative;
-    font-size: 0.88em;
-    letter-spacing: 0.01em;
-  }
   .frameDiv,
-  .todosParent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .todosParent {
-    gap: 0.63em;
-  }
   .frameDiv {
     position: absolute;
     top: 12.25em;
