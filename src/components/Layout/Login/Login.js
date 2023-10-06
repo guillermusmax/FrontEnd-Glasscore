@@ -27,7 +27,7 @@ export function Login() {
     console.log(response);
     localStorage.setItem('jwtToken', response.data.token);
     localStorage.setItem('user', JSON.stringify(response.data.data));
-    window.location.href = "/estudiante\\estudiantehome"; 
+    window.location.href = "/admin\\adminhome"; 
   })
   .catch(function (error) {
     console.log(error);

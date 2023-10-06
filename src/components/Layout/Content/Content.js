@@ -13,6 +13,8 @@ import { InicioEstudiante } from '../InicioEstudiante';
 import { Retiros } from '../Retiros';
 import { HistorialAcademico } from '../HistorialAcademico';
 import { Pensum } from '../Pensum';
+import { CalificacionFinalProfesor } from '../CalificacionFinalProfesor';
+import { CalificacionMedioTerminoProfesor } from '../CalificacionMedioTerminoProfesor';
 
 export function ContentAdmin({ menuVisible, selectedOption }) {
     
@@ -57,6 +59,12 @@ export function ContentAdmin({ menuVisible, selectedOption }) {
       break;
       case 'pensum':
         content = <Pensum />;
+      break;
+      case 'calificacionesmedioterminoprofesor':
+        content = <CalificacionMedioTerminoProfesor />;
+      break;
+      case 'calificacionfinalprofesor':
+        content = <CalificacionFinalProfesor />;
       break;
       // Agrega más casos según tus opciones de menú
       default:
