@@ -23,6 +23,8 @@ let data = [
 
   
 export function TablaUsuarios() {
+
+ 
   
   const [UserList, setUserList] =  useState([])
   useEffect(() => {
@@ -30,7 +32,7 @@ export function TablaUsuarios() {
   }, []);
 
   const getUserList = () => {
-    axios.get("https://localhost:44377/api/Usuarios").then((response) => {
+    axios.get("https://localhost:7206/api/Usuarios").then((response) => {
   
     setUserList(response.data);
     }).catch((error) => {
@@ -90,14 +92,14 @@ export function TablaUsuarios() {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {UserList.map((item, index) => ( 
+         {UserList.length > 0 && UserList.map((item, index) => (
             <Table.Row key={index}>
               <Table.Cell style={{ width: '150px' }} className={styles.centeredCell}>{/*item.Photo*/}<Icon name="id card" /></Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Nombre_Usuario}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.UserName}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Rol}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Email}</Table.Cell>
-              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.Fecha_Ingreso}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.nombreUsuario}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.userName}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.rol}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.email}</Table.Cell>
+              
               <Table.Cell style={{ width: '100px' }} className={styles.centeredCell}>
               <Button icon color="" onClick={() => handleEdit(item.id)} className={styles.iconButton}>
                   <Icon name="pencil alternate" />

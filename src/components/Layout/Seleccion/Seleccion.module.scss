@@ -1,0 +1,52 @@
+ /* Estilos para la página */
+.page-container {
+    padding: 20px;
+  }
+ 
+ /* Estilos para el título principal */
+ .pagetitle {
+    color: #000;
+    text-align: left;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Inter', sans-serif; /* Asegúrate de tener la fuente 'Inter' importada o disponible en tu proyecto */
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 20px; /* ya estaba en tus estilos */
+
+  }
+
+  .namesubject {
+    color: #000;
+    text-align: right;
+    font-family: 'Inter', sans-serif; /* Asegúrate de tener la fuente 'Inter' importada o disponible en tu proyecto */
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .filterContainer {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 10px; // Ajusta el espacio entre el título y el select
+    }
+  }
+
+  .selectContainer {
+    margin-right: 30px; // Separación de 30px entre el select y la barra de búsqueda
+ 
+  }
+
+  .searchContainer {
+    text-align: right;
+    margin-top: 20px;
+    // Agrega propiedades de estilo para el contenedor de búsqueda si es necesario
+  }
+  .tableContainer {
+    margin-top: 20px; // Puedes ajustar el valor para controlar la separación entre la tabla y los componentes de arriba
+    margin-bottom: 40px;
+  }

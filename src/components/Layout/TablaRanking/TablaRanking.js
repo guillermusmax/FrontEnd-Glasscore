@@ -4,7 +4,13 @@ import styles from './TablaRanking.module.scss'
 import { CirculoProgreso } from '@/components/Layout/CirculoProgreso/CirculoProgreso';
 
 export function TablaRanking() {
+
+  function getpercent(indice){
+    var IndicePercent = Math.round((indice*100)/4);
+    return IndicePercent
+  }
   return (
+
     <div className={styles.rankingEstudiantil}>
      <Table basic="very">
         <Table.Header>
@@ -25,7 +31,7 @@ export function TablaRanking() {
             <Table.Cell>6/8</Table.Cell>
             <Table.Cell>80/140</Table.Cell>
             <Table.Cell>
-              <CirculoProgreso percent={75}/>
+              <CirculoProgreso percent={getpercent(4.00)}/>
             </Table.Cell>
           </Table.Row>
         </Table.Body>

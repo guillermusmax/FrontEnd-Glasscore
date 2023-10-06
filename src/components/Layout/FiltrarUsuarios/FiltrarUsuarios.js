@@ -44,7 +44,7 @@ export  function FiltrarUsuarios() {
           </div>
         </div>
         <div className={styles.rightSection}>
-          <Button content='Agregar Estudiante' primary className={styles.addButton} onClick={handleOpenModal} />
+          <Button content='Agregar Usuario' primary className={styles.addButton} onClick={handleOpenModal} />
           <CrearUsuario isOpen={modalOpen} onClose={handleCloseModal} />
         </div>
       </div>

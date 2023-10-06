@@ -22,7 +22,7 @@ export function Login() {
     if (token) {
         localStorage.removeItem('jwtToken');
     }
-    axios.post("https://localhost:44377/api/Login", userData)
+    axios.post("https://localhost:7206/Login", userData)
   .then(function (response) {
     console.log(response);
     localStorage.setItem('jwtToken', response.data.token);
