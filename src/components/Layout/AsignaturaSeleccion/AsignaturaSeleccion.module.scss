@@ -1,0 +1,30 @@
+.fatherContainer {
+    width: 100%;
+    height: 85px;
+    flex-shrink: 0;
+    border-radius: 0.5rem; // Puedes ajustar este valor según lo que "rounded-lg" represente para ti
+    background-color: #FFF;
+
+    @media (min-width: 640px) { // Este es un valor común para el breakpoint 'sm' en TailwindCSS
+        width: 75%;
+        flex-shrink: 1;
+    }
+
+    @media (min-width: 1024px) { // Este es un valor común para el breakpoint 'lg' en TailwindCSS
+        max-width: 1110px;
+    }
+
+    // Aquí es donde definirías tu shadow-custom si aún no lo has hecho
+    &.shadow-custom {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .bloquedetexto {
+        text-align: left; /* Alinea el texto a la izquierda */
+        color: #000;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
