@@ -1,7 +1,8 @@
 import styles from './FiltrarAsignaturas.module.scss';
-import { Table, Icon } from "semantic-ui-react";
+import { Table, Icon, Button } from "semantic-ui-react";
 import React, { useState } from 'react';
 import { MateriaHorario } from '@/components/Layout/MateriaHorario/MateriaHorario';
+import { CrearAsignatura } from '../CrearAsignatura';
 
 export function FiltrarAsignaturas({ clave }) {
  
@@ -29,6 +30,9 @@ export function FiltrarAsignaturas({ clave }) {
   return (
     <div>
       <h2>Gestionar Asignaturas</h2>
+      <Button content='Agregar Estudiante' primary className={styles.addButton} onClick={handleOpenModal} />
+      <CrearAsignatura isOpen={modalOpen} onClose={handleCloseModal} />
+
       <Table>
         <Table.Header>
           <Table.Row>
@@ -46,7 +50,7 @@ export function FiltrarAsignaturas({ clave }) {
               <Table.Cell>
                 <div className="icon-container" onClick={handleOpenModal}>
                   <Icon name="pencil" className={styles.editIcon} /> Editar
-                  <MateriaHorario clave={clave} isOpen={modalOpen} onClose={handleCloseModal}/>
+                  {/*<MateriaHorario clave={clave} isOpen={modalOpen} onClose={handleCloseModal}/>*/}
                 </div>
               </Table.Cell>
             </Table.Row>
