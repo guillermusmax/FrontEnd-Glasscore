@@ -5,12 +5,22 @@
   
   /* Estilos para el título principal */
   .pagetitle {
-    font-size: 24px;
-    margin-bottom: 20px;
+    position: relative;
+    left: 1.2em;
+    margin-top: 2em;
+    font-size: 3em;
+    font-weight: 800;
+    display: inline-block;
+    width: 14.23em;
+    height: 0.98em;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Inter';
+
   }
   
   /* Estilos para el contenedor del componente RankingEstudiantil */
   .ranking-container {
+    
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 5px;

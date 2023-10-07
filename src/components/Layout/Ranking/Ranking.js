@@ -2,6 +2,8 @@ import styles from './Ranking.module.scss'; // Importa tus estilos SCSS
 import { Dropdown, Table, Progress, Tab } from 'semantic-ui-react';
 import { TablaRanking } from '@/components/Layout/TablaRanking/TablaRanking';
 import './Ranking.module.scss';
+import childrenStyle from '../Children.module.css'
+
 
 export function Ranking(){
     return (
