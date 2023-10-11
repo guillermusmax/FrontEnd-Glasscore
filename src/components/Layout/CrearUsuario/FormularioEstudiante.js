@@ -4,18 +4,19 @@ import { Form, Button, Input , Select} from 'semantic-ui-react';
 import styles from './CrearUsuario.module.scss';
 import { CrearUsuario } from './CrearUsuario';
 
-const opcionesTitulo = [
-    { key: '1', text: 'Sistemas', value: '1' },
-    { key: '2', text: 'Programación', value: '2' },
-  ];
 
-export function FormularioEstudiante (){
+
+export function FormularioEstudiante (userData){
 
     const [selectedFile, setSelectedFile] = useState(null);
     const [selectedCarrer, setSelectedCarrer] = useState('');
    // const [selectedID, setSelectedID] = useState('');
     const [isButtonDisabled, setButtonDisabled] = useState(false); // Variable de estado
-   
+
+    const opcionesTitulo = [
+      { key: '1', text: 'Sistemas', value: '1' },
+      { key: '2', text: 'Programación', value: '2' },
+    ];
 
     const handleFileChange = (event) => {
       const file = event.target.files[0];
@@ -26,10 +27,13 @@ export function FormularioEstudiante (){
         setSelectedID(value);
       };
     
-    const handleCarrerChange = (_, { value }) => {
+    const handleCarrerChange = (e, { value }) => {
       setSelectedCarrer(value);
     };
     
+    const studentPost ={
+      nombreCarrera: selectedCarrer
+    }
     const handleSave = () => {
       // Aquí puedes manejar la lógica para guardar la data
       console.log('Carrera:', selectedCarrer);

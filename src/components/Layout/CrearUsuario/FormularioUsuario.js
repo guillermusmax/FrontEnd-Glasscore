@@ -1,40 +1,61 @@
 import React, { useState } from 'react';
 import { Modal, Form, Button, Checkbox, Segment, Select} from "semantic-ui-react";
-
+import axios from 'axios';
 import { CheckboxCambios } from '@/components/Layout/CrearUsuario/CheckboxCambios';
 import styles from './CrearUsuario.module.scss'
 
 
 
-const opcionesEstado = [
-    { key: 'activo', text: 'Activo', value: 'activo' },
-    { key: 'inactivo', text: 'Inactivo', value: 'inactivo' },
-  ];
   
 export function FormularioUsuario(){
-
+  const opcionesEstado = [
+    { key: 'activo', text: 'Activo', value: 'Activo' },
+    { key: 'inactivo', text: 'Inactivo', value: 'Inactivo' },
+  ];
     const [mostrarFormulario, setMostrarFormulario] = useState(true);
+    
+    const [Nombre, setNombre] = useState("");
+    const [Apellido, setApellido] = useState("");
+    const [Email, setEmail] = useState("");
+    const [Rol, setRol] = useState("");
+    const [Estado, setEstado] = useState("");
+    const [Password, setPassword] = useState("");
+    const [PasswordConfirmed, setPasswordConfirmed] = useState("");
+    
+    
 
-
-    const [formData, setFormData] = useState({
-        nombres: '',
-        apellidos: '',
-        email: '',
-        estado: 'activo',
-        password: '',
-        confirmPassword: '',
-      });
+    const formData={
+        nombreUsuario: Nombre,
+        apellidoUsuario: Apellido,
+        email: Email,
+        estado: Estado,
+        password: Password,
+        passwordConfirmed: PasswordConfirmed,
+        rol: "Estudiante"
+      };
   
-      const handleChange = (e, { name, value }) => {
-        setFormData({ ...formData, [name]: value });
-      };
+      
 
-      const handleSubmit = () => {
+      const  handleSubmit = async(event) => {
+        
+       event.preventDefault();
         // Aquí puedes manejar la lógica para guardar los datos
-        console.log(formData);
-        setMostrarFormulario(false);
+        axios.post("https://localhost:7206/api/Usuarios", formData)
+          .then(function (response) {
+            console.log(response);
+            
+            setMostrarFormulario(false);
+          })
+          .catch(function (error) {
+            console.error(error);
+            console.log(formData);
+            // Manejar errores si es necesario
+          });
       };
 
+      const handleChange = (e, { value }) => {
+        setEstado(value);
+      };
 
     return(
 
@@ -44,16 +65,16 @@ export function FormularioUsuario(){
                 <Form.Input
                   label="Nombre(s)"
                   name="nombres"
-                  value={formData.nombres}
-                  onChange={handleChange}
+            
+                  onChange={(e)=> setNombre(e.target.value)}
                   required
                   className={styles.input}
                 />
                 <Form.Input
                   label="Apellido(s)"
                   name="apellidos"
-                  value={formData.apellidos}
-                  onChange={handleChange}
+           
+                  onChange={(e)=> setApellido(e.target.value)}
                   required
                   className={styles.input}
                 />
@@ -61,27 +82,27 @@ export function FormularioUsuario(){
                   label="Email"
                   name="email"
                   type="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  
+                  onChange={(e)=> setEmail(e.target.value)}
                   required
                   className={styles.input}
                 />
                 <Form.Field
-                  label="Estado"
-                  control={Select}
-                  name="estado"
-                  options={opcionesEstado}
-                  value={formData.estado}
-                  onChange={handleChange}
-                  required
-                  className={styles.input}
-                />
+        label="Estado"
+        control={Select}
+        name="estado"
+        options={opcionesEstado}
+        value={Estado}
+        onChange={handleChange}
+        required
+        className={styles.input}
+      />
                 <Form.Input
                   label="Contraseña"
                   name="password"
                   type="password"
-                  value={formData.password}
-                  onChange={handleChange}
+                 
+                  onChange={(e)=> setPassword(e.target.value)}
                   required
                   className={styles.input}
                 />
@@ -89,8 +110,8 @@ export function FormularioUsuario(){
                   label="Confirmar Contraseña"
                   name="confirmPassword"
                   type="password"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
+                 
+                  onChange={(e)=> setPasswordConfirmed(e.target.value)}
                   required
                   className={styles.input}
                 />

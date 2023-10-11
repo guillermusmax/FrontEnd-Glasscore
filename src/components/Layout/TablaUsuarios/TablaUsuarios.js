@@ -3,6 +3,9 @@ import styles from './TablaUsuarios.module.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
+
 let data = [
     { Name: 'Juan Pérez', ID: '12345', TIUser: 'Profesor',  Email: 'juan@example.com', type: "Estudiante", Registerdate: '2023-01-15' },
     { Name: 'María López', ID: '67890', TIUser: 'Estudiante', Email: 'maria@example.com', type: "Estudiante", Registerdate: '2023-02-20' },
@@ -24,7 +27,11 @@ let data = [
   
 export function TablaUsuarios() {
 
- 
+ function getDate( fecha){
+  const fechaConvertida = new Date(fecha);
+  const fechaFormateada = fechaConvertida.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  return fechaFormateada
+ }
   
   const [UserList, setUserList] =  useState([])
   useEffect(() => {
@@ -76,7 +83,7 @@ export function TablaUsuarios() {
   const handlePageChange = (e, { activePage }) => {
     setActivePage(activePage);
   };
-
+  
   return (
     <div className={styles.customTable}>
          <Table>
@@ -99,6 +106,7 @@ export function TablaUsuarios() {
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.userName}</Table.Cell>
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.rol}</Table.Cell>
               <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{item.email}</Table.Cell>
+              <Table.Cell style={{ width: '200px' }} className={styles.centeredCell}>{getDate(item.fechaIngreso)}</Table.Cell>
               
               <Table.Cell style={{ width: '100px' }} className={styles.centeredCell}>
               <Button icon color="" onClick={() => handleEdit(item.id)} className={styles.iconButton}>

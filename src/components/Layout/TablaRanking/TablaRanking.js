@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Progress } from 'semantic-ui-react';
 import styles from './TablaRanking.module.scss'
+import axios from 'axios';
 import { CirculoProgreso } from '@/components/Layout/CirculoProgreso/CirculoProgreso';
 
 export function TablaRanking() {
@@ -8,6 +9,20 @@ export function TablaRanking() {
   function getpercent(indice){
     var IndicePercent = Math.round((indice*100)/4);
     return IndicePercent
+  }
+
+  const [StudentList, setStudentList] =  useState([])
+  useEffect(() => {
+    getStudentList();
+  }, []);
+
+  const getStudentList = () => {
+    axios.get("https://localhost:7206/api/Estudiantes").then((response) => {
+  
+    setStudentList(response.data);
+    }).catch((error) => {
+      console.error('Error al obtener la lista de usuarios:', error);
+    });
   }
   return (
 
@@ -19,77 +34,25 @@ export function TablaRanking() {
             <Table.HeaderCell>Estudiante</Table.HeaderCell>
             <Table.HeaderCell>Carrera</Table.HeaderCell>
             <Table.HeaderCell>Trimestre</Table.HeaderCell>
-            <Table.HeaderCell>Materias</Table.HeaderCell>
+            {/*<Table.HeaderCell>Materias</Table.HeaderCell>*/}
             <Table.HeaderCell>Indice General</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          <Table.Row>
-            <Table.Cell>1</Table.Cell>
-            <Table.Cell>Aurora</Table.Cell>
-            <Table.Cell>Ingenieria</Table.Cell>
-            <Table.Cell>6/8</Table.Cell>
-            <Table.Cell>80/140</Table.Cell>
+          {StudentList.length > 0 && StudentList.map((item,index) => (
+            <Table.Row key = {index}>
+            <Table.Cell>{index+1}</Table.Cell>
+            <Table.Cell>{item.nombreUsuario + " " + item.apellidoUsuario}</Table.Cell>
+            <Table.Cell>{item.carrera}</Table.Cell>
+            <Table.Cell>{item.trimestre}</Table.Cell>
+            {/*<Table.Cell>80/140</Table.Cell>*/}
             <Table.Cell>
-              <CirculoProgreso percent={getpercent(4.00)}/>
+              <CirculoProgreso percent={getpercent(item.indiceGeneral)}/>
             </Table.Cell>
           </Table.Row>
-        </Table.Body>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>1</Table.Cell>
-            <Table.Cell>Sebastian</Table.Cell>
-            <Table.Cell>Ciencias</Table.Cell>
-            <Table.Cell>6/8</Table.Cell>
-            <Table.Cell>80/140</Table.Cell>
-            <Table.Cell>
-              <CirculoProgreso percent={75}/>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body><Table.Body>
-          <Table.Row>
-            <Table.Cell>1</Table.Cell>
-            <Table.Cell>Juan</Table.Cell>
-            <Table.Cell>Admin</Table.Cell>
-            <Table.Cell>6/8</Table.Cell>
-            <Table.Cell>80/140</Table.Cell>
-            <Table.Cell>
-              <CirculoProgreso percent={75}/>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body><Table.Body>
-          <Table.Row>
-            <Table.Cell>1</Table.Cell>
-            <Table.Cell>Jcob</Table.Cell>
-            <Table.Cell>Ingenieria</Table.Cell>
-            <Table.Cell>6/8</Table.Cell>
-            <Table.Cell>80/140</Table.Cell>
-            <Table.Cell>
-              <CirculoProgreso percent={75}/>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body><Table.Body>
-          <Table.Row>
-            <Table.Cell>1</Table.Cell>
-            <Table.Cell>Donato</Table.Cell>
-            <Table.Cell>Administracion</Table.Cell>
-            <Table.Cell>6/8</Table.Cell>
-            <Table.Cell>80/140</Table.Cell>
-            <Table.Cell>
-              <CirculoProgreso percent={90}/>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body><Table.Body>
-          <Table.Row>
-            <Table.Cell>1</Table.Cell>
-            <Table.Cell>Mario</Table.Cell>
-            <Table.Cell>SC</Table.Cell>
-            <Table.Cell>6/8</Table.Cell>
-            <Table.Cell>80/140</Table.Cell>
-            <Table.Cell>
-              <CirculoProgreso percent={50}/>
-            </Table.Cell>
-          </Table.Row>
+          ))}
+          
+        
         </Table.Body>
       </Table>
     </div>

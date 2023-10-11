@@ -20,31 +20,31 @@ export function CheckboxCambios() {
           <Checkbox
             label="Profesor"
             onChange={() => handleUserSelection('profesor')}
-            checked={selectedUser === 'profesor'}
+            checked={selectedUser === 'Profesor'}
           />
           <Checkbox
             label="Estudiante"
             onChange={() => handleUserSelection('estudiante')}
-            checked={selectedUser === 'estudiante'}
+            checked={selectedUser === 'Estudiante'}
           />
           <Checkbox
             label="Administrador"
             onChange={() => handleUserSelection('administrador')}
-            checked={selectedUser === 'administrador'}
+            checked={selectedUser === 'Administrador'}
           />
         </div>
         <div className={styles.contentContainer}>
-          {selectedUser === 'profesor' && (
+          {selectedUser === 'Profesor' && (
             <Segment>
               <FormularioProfesor/>
             </Segment>
           )}
-          {selectedUser === 'estudiante' && (
+          {selectedUser === 'Estudiante' && (
             <Segment>
               <FormularioEstudiante />
             </Segment>
           )}
-          {selectedUser === 'administrador' && (
+          {selectedUser === 'Administrador' && (
             <Segment>
               <FormularioAdministrador/>
             </Segment>
