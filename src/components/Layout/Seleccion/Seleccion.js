@@ -6,7 +6,11 @@ import styles from './Seleccion.module.scss';
 import { useState, useEffect } from 'react';
 
 export function Seleccion(){
+    const [searchValue, setSearchValue] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+
     const [showMessage, setShowMessage] = useState(false);
+    const [subject, setSubject] = useState(""); // Agrega el estado para el prop subject
 
     useEffect(() => {
         if (showMessage) {
@@ -17,6 +21,23 @@ export function Seleccion(){
             return () => clearTimeout(timer);
         }
     }, [showMessage]);
+
+
+
+    const handleSearchChange = (e, { value }) => {
+        setSearchValue(value);
+        setIsLoading(true);
+      
+        if (value === "") {
+          // Si el valor de búsqueda está vacío, limpiar los resultados
+          setSearchValue([]);
+          setIsLoading(false);
+        } else {
+            setSearchValue(value);
+            setSubject(value); // Asigna el valor del input al prop subject
+            console.log(value)
+        }
+    }
 
     return(
         <>
@@ -36,10 +57,15 @@ export function Seleccion(){
                 Buscar asignatura
             </div>
             <div className={styles.searchContainer}>
-                <Search className={styles.searchInput} />
+                <Search 
+                className={styles.searchInput} 
+                loading={isLoading}
+                placeholder='CBM-110'
+                onSearchChange={handleSearchChange}/>
             </div>
             <div className={styles.tableContainer}>
-                <BuscarAsignacion />
+                <BuscarAsignacion
+                    subject={searchValue.toString()} />
             </div>
         </>
     );

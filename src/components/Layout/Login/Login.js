@@ -10,7 +10,7 @@ export function Login() {
   
   const [mostrarPasswordReset, setMostrarPasswordReset] = useState(false);
 
-  const [userName,setUserName] = useState(0)
+  const [userName,setUserName] = useState("")
   const [userPassword,setUserPassword] = useState("")
   const userData ={
     User: userName,
@@ -30,6 +30,7 @@ export function Login() {
     window.location.href = "/admin\\adminhome"; 
   })
   .catch(function (error) {
+    console.log(userData);
     console.log(error);
   })
   .finally(function () {
@@ -64,7 +65,7 @@ export function Login() {
               <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
               <input type="password" onChange={(e)=> setUserPassword(e.target.value)}   name = "Password" id="password" user="password" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
             </div>
-            <Link href="/Inicio">
+            <Link href="/pages/estudiante/estudiantehome">
               <button onClick={handleSubmit} class="text-white bg-sky-900 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Log in</button>
             </Link>
             <Link href="/forget">

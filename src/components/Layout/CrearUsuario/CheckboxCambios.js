@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import { Checkbox, Segment } from 'semantic-ui-react';
 
 import styles from './CrearUsuario.module.scss';
@@ -58,4 +58,3 @@ export function CheckboxCambios() {
       </div>
     );
   }
-  

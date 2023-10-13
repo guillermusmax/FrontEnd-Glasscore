@@ -11,13 +11,7 @@ let data = [
     { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
     { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
     { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
-    { Código: 'CBM-110', Materia: 'Aseguramiento de ondas', Sección: '01', Profesores: 'Eva Liriano', Créditos: "4", Horario: "Mar: 12/14"},
+    
     // ... otros datos ...
   ];
 
@@ -110,11 +104,11 @@ export function SeleccionEstudiante() {
           ))}
         </Table.Body>
       </Table>
-      <Pagination
+      {/*<Pagination
         activePage={activePage}
         totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+          onPageChange={handlePageChange}
+      />*/}
 
     </div>
   )

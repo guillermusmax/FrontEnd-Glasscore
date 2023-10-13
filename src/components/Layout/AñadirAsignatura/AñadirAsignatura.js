@@ -1,20 +1,43 @@
-import { Modal, Form, Button, Checkbox, Segment, Icon, Radio} from "semantic-ui-react";
+import { Modal, Form, Button, Radio } from "semantic-ui-react";
 import React, { useState } from 'react';
-import styles from './AñadirAsignatura.module.scss'
+import styles from './AñadirAsignatura.module.scss';
 
-export function AñadirAsignatura({ isOpen, onClose }) {
-  const [userType, setUserType] = useState(null);
+export function AñadirAsignatura({ isOpen, onClose, asignaturaCodigo }) {
+  const [selectedSeccion, setSelectedSeccion] = useState(null);
 
-  const data = {
-    '1': {
-      profesor: 'Edwin Lopez',
-      horario: 'Martes: 16/18, Jueves 16/18'
+  const asignaturas = {
+    'CBM-110': {
+      '1': {
+        profesores: 'Edwin Lopez',
+        creditos: 4,
+        horario: 'Martes: 14/16, Jueves 14/16',
+      },
+      '2': {
+        profesores: 'Maria Duruthy',
+        creditos: 4,
+        horario: 'Martes: 16/18, Jueves 16/18',
+      },
+      '3': {
+        profesores: 'Nehomar Zalasaar',
+        creditos: 4,
+        horario: 'Martes: 9/11, Viernes 9/11',
+      },
     },
-    '2': {
-      profesor: 'Maria Duruthy',
-      horario: 'Martes: 16/18, Jueves 16/18'
-    }
+    'CFB-230': {
+      '1': {
+        profesores: 'Carlos García',
+        creditos: 3,
+        horario: 'Lunes: 10/12, Miércoles 10/12',
+      },
+      '2': {
+        profesores: 'Ana Rodriguez',
+        creditos: 3,
+        horario: 'Lunes: 14/16, Miércoles 14/16',
+      },
+    },
   };
+
+  const secciones = asignaturas[asignaturaCodigo];
 
   return (
     <div className={styles.crearusuariolayout}>
@@ -23,40 +46,28 @@ export function AñadirAsignatura({ isOpen, onClose }) {
         <Modal.Content>
           <Form>
             <Form.Field className={styles.checkboxGroup}>
-              <label>Lengua Española</label>
-              <div className={styles.checkboxContainer}>
-                <Form.Field>
-                  <Radio
-                    label="Sección 1"
-                    value="1"
-                    checked={userType === '1'}
-                    onChange={() => setUserType('1')}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <Radio
-                    label="Sección 2"
-                    value="2"
-                    checked={userType === '2'}
-                    onChange={() => setUserType('2')}
-                  />
-                </Form.Field>
-              </div>
+              <label>{`Asignatura ${asignaturaCodigo}`}</label>
+              {secciones &&
+                Object.keys(secciones).map((seccionKey) => (
+                  <Form.Field key={seccionKey}>
+                    <Radio
+                      label={`Sección ${seccionKey}`}
+                      value={seccionKey}
+                      checked={selectedSeccion === seccionKey}
+                      onChange={() => setSelectedSeccion(seccionKey)}
+                    />
+                  </Form.Field>
+                ))}
             </Form.Field>
-            <div className={styles.nameRow}>
-              <div className={styles.nameField}>
+            {selectedSeccion !== null && secciones && (
+              <div className={styles.nameRow}>
                 <Form.Field>
-                  <label>Sección 1</label>
-                  <p>{data['1'].profesor}; {data['1'].horario}</p>
+                  <label>{`Sección ${selectedSeccion}`}</label>
+                  <p>{`Profesor: ${secciones[selectedSeccion].profesores}`}</p>
+                  <p>{`Horario: ${secciones[selectedSeccion].horario}`}</p>
                 </Form.Field>
               </div>
-              <div className={styles.nameField}>
-                <Form.Field>
-                  <label>Sección 2</label>
-                  <p>{data['2'].profesor}; {data['2'].horario}</p>
-                </Form.Field>
-              </div>
-            </div>                
+            )}
           </Form>
         </Modal.Content>
         <Modal.Actions className={styles.actionsContainer}>
