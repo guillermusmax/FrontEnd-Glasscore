@@ -40,6 +40,7 @@ export function FormularioUsuario(){
         
        event.preventDefault();
         // Aquí puedes manejar la lógica para guardar los datos
+<<<<<<< Updated upstream
         axios.post("https://localhost:7206/api/Usuarios", formData)
           .then(function (response) {
             console.log(response);
@@ -51,6 +52,11 @@ export function FormularioUsuario(){
             console.log(formData);
             // Manejar errores si es necesario
           });
+=======
+        
+        console.log(formData);
+        setMostrarFormulario(false);
+>>>>>>> Stashed changes
       };
 
       const handleChange = (e, { value }) => {

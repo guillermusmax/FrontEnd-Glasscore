@@ -30,3 +30,4 @@ export * from './InicioEstudiante';
 export * from './Pensum';
 export * from './PensumFrame';
 export * from './RankingFrame';
+export * from './ModificarUsuario';

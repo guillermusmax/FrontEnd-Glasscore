@@ -2,6 +2,7 @@ import { Table, Button, Icon , Pagination} from "semantic-ui-react";
 import styles from './TablaUsuarios.module.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { ModificarUsuario } from "../ModificarUsuario";
 
 
 
@@ -27,12 +28,15 @@ let data = [
   
 export function TablaUsuarios() {
 
+<<<<<<< Updated upstream
  function getDate( fecha){
   const fechaConvertida = new Date(fecha);
   const fechaFormateada = fechaConvertida.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
   return fechaFormateada
  }
   
+=======
+>>>>>>> Stashed changes
   const [UserList, setUserList] =  useState([])
   useEffect(() => {
     getUserList();
@@ -50,40 +54,52 @@ export function TablaUsuarios() {
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [selectedItemId, setSelectedItemId] = useState(null);
 
-  const handleEdit = (id) => {
-    // Lógica para editar el elemento con el ID proporcionado
-    // Aquí puedes abrir un modal o realizar la acción que necesites.
-  };
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [editUserId, setEditUserId] = useState(null);
 
-  const handleDelete = (id) => {
-    setSelectedItemId(id);
-    setConfirmOpen(true);
-  };
+    const handleEdit = (id) => {
+      // Lógica para editar el elemento con el ID proporcionado
+      // Aquí puedes abrir un modal o realizar la acción que necesites.
+      setEditUserId(id);
+      setIsEditModalOpen(true);
+    };
 
-  const handleConfirmDelete = () => {
-    // Lógica para eliminar el elemento con el ID seleccionado
-    // Aquí debes eliminar el elemento de tu lista de datos.
-    // Por ejemplo, puedes usar filter para crear una nueva lista sin el elemento.
-    data = data.filter((item) => item.id !== selectedItemId);
-    setConfirmOpen(false);
-  };
+    const handleDelete = (id) => {
+      setSelectedItemId(id);
+      setConfirmOpen(true);
+    };
 
-  const handleCancelDelete = () => {
-    setConfirmOpen(false);
-  };
+    const handleConfirmDelete = () => {
+      // Lógica para eliminar el elemento con el ID seleccionado
+      // Aquí debes eliminar el elemento de tu lista de datos.
+      // Por ejemplo, puedes usar filter para crear una nueva lista sin el elemento.
+      data = data.filter((item) => item.id !== selectedItemId);
+      setConfirmOpen(false);
+    };
 
-  const itemsPerPage = 10;
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+    const handleCancelDelete = () => {
+      setConfirmOpen(false);
+    };
 
-  const [activePage, setActivePage] = useState(1);
-  const startIndex = (activePage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentData = data.slice(startIndex, endIndex);
+    const itemsPerPage = 10;
+    const totalPages = Math.ceil(data.length / itemsPerPage);
 
+<<<<<<< Updated upstream
   const handlePageChange = (e, { activePage }) => {
     setActivePage(activePage);
   };
   
+=======
+    const [activePage, setActivePage] = useState(1);
+    const startIndex = (activePage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentData = data.slice(startIndex, endIndex);
+
+    const handlePageChange = (e, { activePage }) => {
+      setActivePage(activePage);
+    };
+
+>>>>>>> Stashed changes
   return (
     <div className={styles.customTable}>
          <Table>
@@ -124,6 +140,12 @@ export function TablaUsuarios() {
         activePage={activePage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
+      />
+      <ModificarUsuario
+       isOpen={isEditModalOpen}
+       onClose={() => setIsEditModalOpen(false)}
+       userId={editUserId}
+       data={data} 
       />
 
     </div>
